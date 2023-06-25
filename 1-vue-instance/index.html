@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div id="app">
+        <!-- {{ changeTitle('This title will be change') }} -->
+      <h1>{{ title }}</h1>
+      <p>{{ content }}</p>
+      <a target="_blank" v-bind:href="url">Vue JS 3</a>
+      <br />
+      <a
+        v-bind:target="objectLink.target"
+        v-bind:href="objectLink.url"
+        :alt="objectLink.alt"
+        >{{ objectLink.title }}</a
+      >
+      <br />
+      <br />
+      <button v-on:click="changeTitle('button 1')">Button 1</button>
+      <button v-on:click="changeTitle('button2')">Button 2</button>
+      <br>  
+      <div @mousemove="updateCoords($event,'mouseMove')" class="box" @click="changeTitle('box')">
+        
+
+        </div>
+        <span>{{ coords.x}},{{coords.y }}</span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
