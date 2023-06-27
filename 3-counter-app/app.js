@@ -31,4 +31,12 @@ const app = Vue.createApp({
       return this.counter2 > 5 ? "bigger than 5" : "less than 5";
     },
   },
+  watch: { //works when value changed
+    counter(newValue,oldValue){
+      console.log(oldValue,"=>",newValue)
+    },
+    getCounterResult(newValue,oldValue) {
+      console.log(oldValue,"=>",newValue)
+    }
+  }
 }).mount("#app");
