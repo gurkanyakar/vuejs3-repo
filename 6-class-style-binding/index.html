@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Style Binding</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h1> {{ showBorder }} </h1> -->
+      <h1> {{ bgColor }}</h1>
+      <input v-model="bgColor" type="text">
+      <button @click="showBorder = !showBorder">show border / dont show</button>
+      <button @click="redBG = !redBG">RED BG</button>
+      <div class="box" :class="boxClasses" :style="{ backgroundColor : bgColor }">
+
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
