@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditions</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="text-center">{{ showContainer }}</h1>
+      <h2 class="text-center" :class="counterBoxClass">{{ counter }}</h2>
+      <div class="col-12 text-center">
+        <button
+          class="btn btn-sm btn-primary"
+          @click="showContainer = !showContainer"
+        >
+          Open / Close
+        </button>
+      </div>
+
+      <h1 v-if="!showContainer" class="text-danger">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h1>
+      <h1 v-else class="text-primary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h1>
+      <hr />
+      <div class="col-12 text-center">
+        <button class="btn btn-sm btn-success" @click="counter++">
+          Increase
+        </button>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button class="btn btn-sm btn-danger" @click="counter--">
+          Decrease
+        </button>
+      </div>
+      <p v-if="counter>0">counter positive</p>
+      <p v-else-if="counter<0">counter negative</p>
+      <p v-else>counter 0</p>
+
+      <hr>
+      <p v-show="counter>0">counter positive</p>
+      <p v-show="counter<0">counter negative</p>
+      <p v-show="counter==0">counter 0</p>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
